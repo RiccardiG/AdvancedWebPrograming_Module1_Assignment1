@@ -5,6 +5,6 @@
   },
   "scripts": {
     "test": "mocha -r esm test.js",
-    "start": "nodemon index.js"
+    "start": "nodemon node --trace-warnings index.js"
   }
 }

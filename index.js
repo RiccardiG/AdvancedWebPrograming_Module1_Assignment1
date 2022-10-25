@@ -2,7 +2,12 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+const track = require('./api/track')
+
 app.use(express.static('public'));
+app.use(express.json());
+
+app.use('/api/v1/track', track);
 
 const dogs = [
   {name:"Jimbo" , breed: "Husky"},
@@ -38,8 +43,10 @@ app.get('/user/:id', (req, res) => {
   res.send(`Welcome user ${req.params.id}`);
 });
 
+
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
 
-
+module.exports = app;
