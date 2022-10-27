@@ -8,8 +8,6 @@ exports.up = function(knex) {
         table.text(`albumName`).notNullable();
         table.integer(`numTracks`).notNullable();
         table.date(`albumReleaseDate`).notNullable();
-        table.text(`artistLabels`).notNullable();
-        table.text(`artistDescription`).notNullable();
         table.integer(`albumNumStreamings`).notNullable();
         table.integer(`artistID`).notNullable();
         table.foreign(`artistID`).references('artistID').inTable('artist');
