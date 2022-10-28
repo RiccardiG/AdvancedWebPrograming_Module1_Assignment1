@@ -19,7 +19,7 @@ const removeMember = (artistName) => {
 					<th> ID</th>
 					<th> Name</th>
 					<th> Label</th>
-					<th> Descritpion</th>
+					<th> Description</th>
 					<th> Number of streamings</th>
                     <th> Actions</th>
 				</tr>
@@ -31,10 +31,60 @@ const removeMember = (artistName) => {
                 <td>{{item.artistDescription}}</td>
                 <td>{{item.artistNumStreamings}}</td>
                 <td>
-                    <button class="btn btn-primary" @click="changePerm(item)">Edit</button>
                     <button class="btn btn-danger" @click="removeMember(item.artistName)">Delete</button>
                 </td>
 			</tr>
 		</table>
 	</div>
+
+	<div class="container">
+		<br><br>
+                <label><strong>Add new artist to database </strong></label>
+            </div>
+            <div class="card-body">
+                <br>
+                <div class="row">
+                    <div class="col-2"> Id : </div>
+                    <div class="col">
+                        <input type="text" v-model="newItem" placeholder="artist id" />
+                    </div>
+                </div>
+                <br><br>
+				<div class="row">
+                    <div class="col-2"> Name : </div>
+                    <div class="col">
+                        <input type="text" v-model="newItem" placeholder="artist name" />
+                    </div>
+                </div>
+				<br><br>
+                <div class="row">
+                    <div class="col-2"> Label : </div>
+                    <div class="col">
+                        <input type="text" v-model="newItem" placeholder="artist label" />
+                    </div>
+                </div>
+                <br><br>
+                <div class="row">
+                    <div class="col-2"> Description : </div>
+                    <div class="col">
+                        <input type="text" v-model="newItem" placeholder="artist description" />
+                    </div>
+                </div>
+				<br><br>
+                <div class="row">
+                    <div class="col-2"> Number of streamings : </div>
+                    <div class="col">
+                        <input type="text" v-model="newItem" placeholder="artist number of streamings" />
+                    </div>
+                </div>
+                <br><br>
+                <div class="row">
+                    <div class="col offset-1 ml-4">
+                        <button class="btn btn-primary" @click="addItem">Add</button>
+						<button class="btn btn-primary" @click="addItem">Update</button>
+                    </div>
+					
+                    </div>
+                </div>
+
 </template>

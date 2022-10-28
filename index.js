@@ -4,12 +4,16 @@ const port = 3000;
 
 const track = require('./api/track');
 const artist = require("./api/artist");
+const album = require("./api/album");
+const genre = require("./api/genre");
 
 app.use(express.static('public'));
 app.use(express.json());
 
 app.use("/api/v1/track", track);
 app.use("/api/v1/artist", artist);
+app.use("/api/v1/album", album);
+app.use("/api/v1/genre", genre);
 
 const dogs = [
   {name:"Jimbo" , breed: "Husky"},
@@ -36,7 +40,7 @@ app.get('/admins/:id', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/old_index.html");
 });
 
 app.get('/login', (req, res) => {
