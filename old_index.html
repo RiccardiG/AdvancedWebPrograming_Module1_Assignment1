@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Assignment</title>
+    <link rel = "stylesheet" media = "screen" href = "/CSS/bootstrap.min.css">
+</head>
+<body>
+    <main>
+        <div class="container py-4">
+          <header class="pb-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+              <span class="fs-4">Jumbotron example</span>
+            </a>
+          </header>
+      
+          <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">(Class) Dogs</h1>
+              <p class="col-md-8 fs-4">This is part of what we did in class following the Techmaker Studio Node Js Api video.</p>
+              <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="dogs">Dogs dictionary</a></button>
+            </div>
+          </div>
+
+          <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">(DATABASE) Assignment 4</h1>
+              <p class="col-md-8 fs-4">Different SELECT QUERIES from database.</p>
+              <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="api/v1/track">All Songs</a></button>
+              <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="api/v1/track/most-played">Most Played</a></button>
+              <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="api/v1/track/top-hits">Top Hits</a></button>
+              <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="api/v1/track/pop">All pop songs</a></button>
+              <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="api/v1/track/artist-and-album">Most listened artist & album</a></button>
+              <p class="col-md-8 fs-4">Different ADD QUERIES from database.</p>
+              <form>
+                <div class="form-floating">
+                  <input type="text" id="songID" placeholder="Song id">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="songTitle" placeholder="new Song name">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="songGenre" placeholder="new Song genre">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="songReleaseDate" placeholder="new Song release date">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="songNumStreamings" placeholder="new Song number streamings">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="songArtistID" placeholder="new artist id">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="songAlbumID" placeholder="new album id">
+                </div>
+                <button class="btn btn-outline-secondary" type="button" onclick = addTrack()>Add</button>
+              </form>
+              <p class="col-md-8 fs-4">Different REMOVE QUERIES from database.</p>
+              <form>
+                <div class="form-floating">
+                  <input type="text" id="floatingSongId" placeholder="Song id">
+              
+                </div>
+                
+                <button class="btn btn-outline-secondary" type="button" onclick = delTrack()>Remove</button>
+              </form>
+              <p class="col-md-8 fs-4">Different UPDATE QUERIES from database.</p>
+              <form>
+                <div class="form-floating">
+                  <input type="text" id="songID1" placeholder="Song id">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="songTitle1" placeholder="new Song name">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="songGenre1" placeholder="new Song genre">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="songReleaseDate1" placeholder="new Song release date">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="songNumStreamings1" placeholder="new Song number streamings">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="songArtistID1" placeholder="new artist id">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="songAlbumID1" placeholder="new album id">
+                </div>
+                <button class="btn btn-outline-secondary" type="button" onclick = updateTrack()>Update</button>
+              </form>
+            </div>
+          </div>
+          
+      
+          <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+              <div class="h-100 p-5 text-bg-dark rounded-3">
+                <h2>(Assignment 2) Login now</h2>
+                <p>This button will take you to a second static page allowing you to log in.</p>
+                <button class="btn btn-outline-light" type="button"><a class = "btn btn-outline-light" href="login">Log-in</a> </button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="h-100 p-5 bg-light border rounded-3">
+                <h2>Check admins (Assignment 2)</h2>
+                <p>Enter an admin name and we'll bring you to his presentation page. Only Giuliano & root are available</p>
+                <form>
+                  <div class="form-floating">
+                    <input type="text" id="floatingAdmin" placeholder="Admin name">
+                
+                  </div>
+                  <button class="btn btn-outline-secondary" type="button" onclick = checkAdmins()>Look up</button>
+                </form>
+                
+              
+              </div>
+            </div>
+          </div>
+      
+          <footer class="pt-3 mt-4 text-muted border-top">
+            © 2022
+          </footer>
+        </div>
+      </main>
+    <script src = "/JS/admins.js"></script>
+    <script src = "/JS/crud.js"></script>
+    <script src = "/JS/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -2,12 +2,14 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const track = require('./api/track')
+const track = require('./api/track');
+const artist = require("./api/artist");
 
 app.use(express.static('public'));
 app.use(express.json());
 
-app.use('/api/v1/track', track);
+app.use("/api/v1/track", track);
+app.use("/api/v1/artist", artist);
 
 const dogs = [
   {name:"Jimbo" , breed: "Husky"},
@@ -18,6 +20,8 @@ const admins = [
   {name: "Root", age: -1, index:0},
   {name: "Giuliano", age:20, index:1}
 ]
+
+
 
 app.get('/dogs', (req, res) => {
   res.json(dogs);

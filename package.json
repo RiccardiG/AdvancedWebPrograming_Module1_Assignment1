@@ -1,12 +1,17 @@
 {
   "dependencies": {
+    "@vitejs/plugin-vue": "^3.2.0",
     "express": "^4.18.1",
     "knex": "^2.3.0",
     "nodemon": "^2.0.20",
-    "pg": "^8.8.0"
+    "pg": "^8.8.0",
+    "vite": "^3.2.0",
+    "vue": "^3.2.41",
+    "vue-router": "^4.1.6"
   },
   "scripts": {
     "test": "mocha -r esm test.js",
-    "start": "nodemon node --trace-warnings index.js"
+    "start": "nodemon node --trace-warnings index.js",
+    "dev": "vite"
   }
 }
