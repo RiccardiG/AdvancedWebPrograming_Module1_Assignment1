@@ -10,5 +10,24 @@ router.get('/', (req, res) => {
         res.json(tracks);
     });
 });
+router.post('/post', (request, response, next) =>{
+    queries.createAlbum(request.body).then(track =>{
+        response.json(track[0]);
+    });
+});
+
+router.delete('/:id', (request, response)=>{
+    queries.deleteAlbum(request.params.id).then(()=>{
+        response.json({
+            deleted: true
+        });
+    });
+});
+
+router.put('/:id', (request, response)=>{
+    queries.updateAlbum(request.params.id, request.body).then(tracks =>{
+        response.json(tracks[0]);
+    });
+});
 
 module.exports = router;

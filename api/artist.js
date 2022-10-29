@@ -11,4 +11,24 @@ router.get('/', (req, res) => {
     });
 });
 
+router.post('/post', (request, response, next) =>{
+    queries.createArtist(request.body).then(track =>{
+        response.json(track[0]);
+    });
+});
+
+router.delete('/:id', (request, response)=>{
+    queries.deleteArtist(request.params.id).then(()=>{
+        response.json({
+            deleted: true
+        });
+    });
+});
+
+router.put('/:id', (request, response)=>{
+    queries.updateArtist(request.params.id, request.body).then(tracks =>{
+        response.json(tracks[0]);
+    });
+});
+
 module.exports = router;

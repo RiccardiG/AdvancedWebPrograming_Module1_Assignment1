@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classroom Assignment</title>
+    <title>Final Project</title>
     <link rel = "stylesheet" media = "screen" href = "/CSS/bootstrap.min.css">
 </head>
 <body>
@@ -12,32 +12,133 @@
         <div class="container py-4">
           <header class="pb-3 mb-4 border-bottom">
             <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-              <span class="fs-4">Jumbotron example</span>
+              <span class="fs-4">Backend Verifier</span>
             </a>
           </header>
-      
           <div class="p-5 mb-4 bg-light rounded-3">
+            <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="./index.html">Front End</a></button>
             <div class="container-fluid py-5">
-              <h1 class="display-5 fw-bold">(Class) Dogs</h1>
-              <p class="col-md-8 fs-4">This is part of what we did in class following the Techmaker Studio Node Js Api video.</p>
-              <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="dogs">Dogs dictionary</a></button>
+              <h1 class="display-5 fw-bold">(DATABASE) Artist table</h1>
+              <p class="col-md-8 fs-4">Different SELECT QUERIES from database.</p>
+              <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="api/v1/artist">All Artists</a></button>
+              
+              <p class="col-md-8 fs-4">ADD Artist to database.</p>
+              <form>                           
+                <div class="form-floating">
+                  <input type="text" id="artistName" placeholder="new Artist name">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="artistLabels" placeholder="new Artist label">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="artistDescription" placeholder="new Artist description">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="artistNumStreamings" placeholder="new Artist number streamings">
+                </div>
+                
+                <button class="btn btn-outline-secondary" type="button" onclick = addArtist()>Add</button>
+              </form>
+              <p class="col-md-8 fs-4">REMOVE Artist from database.</p>
+              <form>
+                <div class="form-floating">
+                  <input type="text" id="artistID" placeholder="Artist id">
+                </div>
+                <button class="btn btn-outline-secondary" type="button" onclick = delArtist()>Remove</button>
+              </form>
+              <p class="col-md-8 fs-4">UPDATE Artist from database.</p>
+              <form>
+                <div class="form-floating">
+                  <input type="text" id="artistID1" placeholder="Artist id">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="artistName1" placeholder="new Artist name">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="artistLabels1" placeholder="new Artist label">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="artistDescription1" placeholder="new Artist Description">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="artistNumStreamings1" placeholder="new Artist number streamings">
+                </div>               
+                <button class="btn btn-outline-secondary" type="button" onclick = updateArtist()>Update</button>
+              </form>
             </div>
           </div>
+          
+          <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">(DATABASE) Album table</h1>
+              <p class="col-md-8 fs-4">Different SELECT QUERIES from database.</p>
+              <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="api/v1/album">All albums</a></button>
+              
+              <p class="col-md-8 fs-4">ADD Album to database.</p>
+              <form>
+                
+                <div class="form-floating">
+                  <input type="text" id="albumName" placeholder="new album name">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="numTracks" placeholder="new album num tracks">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="albumReleaseDate" placeholder="new Album release date">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="albumNumStreamings" placeholder="new Album number streamings">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="albumArtistID" placeholder="new album artist id">
+                </div>
+                
+                <button class="btn btn-outline-secondary" type="button" onclick = addAlbum()>Add</button>
+              </form>
+              <p class="col-md-8 fs-4">REMOVE Album from database.</p>
+              <form>
+                <div class="form-floating">
+                  <input type="text" id="albumID" placeholder="Album id">
+                </div>
+                <button class="btn btn-outline-secondary" type="button" onclick = delAlbum()>Remove</button>
+              </form>
+              <p class="col-md-8 fs-4">UPDATE Album from database.</p>
+              <form>
+                <div class="form-floating">
+                  <input type="text" id="albumID1" placeholder="Album id">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="albumName1" placeholder="new album name">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="numTracks1" placeholder="new album num tracks">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="albumReleaseDate1" placeholder="new Album release date">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="albumNumStreamings1" placeholder="new Album number streamings">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="albumArtistID1" placeholder="new album artist id">
+                </div>
+                <button class="btn btn-outline-secondary" type="button" onclick = updateAlbum()>Update</button>
+              </form>
+            </div>
+          </div>
+          
 
           <div class="p-5 mb-4 bg-light rounded-3">
             <div class="container-fluid py-5">
-              <h1 class="display-5 fw-bold">(DATABASE) Assignment 4</h1>
+              <h1 class="display-5 fw-bold">(DATABASE) Track table</h1>
               <p class="col-md-8 fs-4">Different SELECT QUERIES from database.</p>
               <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="api/v1/track">All Songs</a></button>
               <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="api/v1/track/most-played">Most Played</a></button>
               <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="api/v1/track/top-hits">Top Hits</a></button>
-              <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="api/v1/track/pop">All pop songs</a></button>
-              <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="api/v1/track/artist-and-album">Most listened artist & album</a></button>
-              <p class="col-md-8 fs-4">Different ADD QUERIES from database.</p>
+              <p class="col-md-8 fs-4">ADD Track to database.</p>
+
               <form>
-                <div class="form-floating">
-                  <input type="text" id="songID" placeholder="Song id">
-                </div>
+                
                 <div class="form-floating">
                   <input type="text" id="songTitle" placeholder="new Song name">
                 </div>
@@ -58,16 +159,14 @@
                 </div>
                 <button class="btn btn-outline-secondary" type="button" onclick = addTrack()>Add</button>
               </form>
-              <p class="col-md-8 fs-4">Different REMOVE QUERIES from database.</p>
+              <p class="col-md-8 fs-4">REMOVE Track from database.</p>
               <form>
                 <div class="form-floating">
                   <input type="text" id="floatingSongId" placeholder="Song id">
-              
                 </div>
-                
                 <button class="btn btn-outline-secondary" type="button" onclick = delTrack()>Remove</button>
               </form>
-              <p class="col-md-8 fs-4">Different UPDATE QUERIES from database.</p>
+              <p class="col-md-8 fs-4">UPDATE Track from database.</p>
               <form>
                 <div class="form-floating">
                   <input type="text" id="songID1" placeholder="Song id">
@@ -95,34 +194,60 @@
             </div>
           </div>
           
-      
-          <div class="row align-items-md-stretch">
-            <div class="col-md-6">
-              <div class="h-100 p-5 text-bg-dark rounded-3">
-                <h2>(Assignment 2) Login now</h2>
-                <p>This button will take you to a second static page allowing you to log in.</p>
-                <button class="btn btn-outline-light" type="button"><a class = "btn btn-outline-light" href="login">Log-in</a> </button>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="h-100 p-5 bg-light border rounded-3">
-                <h2>Check admins (Assignment 2)</h2>
-                <p>Enter an admin name and we'll bring you to his presentation page. Only Giuliano & root are available</p>
-                <form>
-                  <div class="form-floating">
-                    <input type="text" id="floatingAdmin" placeholder="Admin name">
+          <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">(DATABASE) Genre table</h1>
+              <p class="col-md-8 fs-4">Different SELECT QUERIES from database.</p>
+              <button class="btn btn-primary btn-lg" type="button"> <a class = "btn btn-primary btn-lg" href ="api/v1/genre">All Genres</a></button>          
+              <p class="col-md-8 fs-4">ADD Genre to database.</p>
+              <form>
                 
-                  </div>
-                  <button class="btn btn-outline-secondary" type="button" onclick = checkAdmins()>Look up</button>
-                </form>
+                <div class="form-floating">
+                  <input type="text" id="genreName" placeholder="new genre name">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="genreDescription" placeholder="new genre description">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="genreTopHit" placeholder="new genre top hit">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="genreTopArtist" placeholder="new genre top artist">
+                </div>
                 
-              
-              </div>
+                <button class="btn btn-outline-secondary" type="button" onclick = addGenre()>Add</button>
+              </form>
+              <p class="col-md-8 fs-4">REMOVE Genre from database.</p>
+              <form>
+                <div class="form-floating">
+                  <input type="text" id="genreID" placeholder="genre id">
+                </div>
+                <button class="btn btn-outline-secondary" type="button" onclick = delGenre()>Remove</button>
+              </form>
+              <p class="col-md-8 fs-4">UPDATE Genre from database.</p>
+              <form>
+                <div class="form-floating">
+                  <input type="text" id="genreID1" placeholder="genre id">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="genreName1" placeholder="new genre name">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="genreDescription1" placeholder="new genre description">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="genreTopHit1" placeholder="new genre top hit">
+                </div>
+                <div class="form-floating">
+                  <input type="text" id="genreTopArtist1" placeholder="new genre top artist">
+                </div>
+                <button class="btn btn-outline-secondary" type="button" onclick = updateGenre()>Update</button>
+              </form>
             </div>
           </div>
-      
+          
           <footer class="pt-3 mt-4 text-muted border-top">
-            © 2022
+            © Giuliano Riccardi - Louis-Marie Robin - Alexandre Dibon - Victoria Guez - Matthieu Vichet -2022
           </footer>
         </div>
       </main>

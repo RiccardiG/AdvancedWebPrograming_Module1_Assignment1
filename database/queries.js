@@ -31,10 +31,37 @@ module.exports = {
     create(track){
         return knex('track').insert(track,'*');
     },
+    createArtist(artist){
+        return knex('artist').insert(artist, '*');
+    },
+    createAlbum(album){
+        return knex('album').insert(album, '*');
+    },
+    createGenre(genre){
+        return knex('genre').insert(genre, '*');
+    },
     delete(id){
-        return knex('track').where('trackid', id).del();
+        return knex('track').where('trackID', id).del();
+    },
+    deleteArtist(id){
+        return knex('artist').where('artistID', id).del();
+    },
+    deleteAlbum(id){
+        return knex('album').where('albumID', id).del();
+    },
+    deleteGenre(id){
+        return knex('genre').where('genreID', id).del();
     },
     update(id, track){
-        return knex('track').where('trackid', id).update(track);
+        return knex('track').where('trackID', id).update(track);
+    },
+    updateArtist(id, artist){
+        return knex('artist').where('artistID', id).update(artist);
+    },
+    updateGenre(id, genre){
+        return knex('genre').where('genreID', id).update(genre);
+    },
+    updateAlbum(id, album){
+        return knex('album').where('albumID', id).update(album);
     }
 }
